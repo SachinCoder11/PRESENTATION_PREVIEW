@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fluent-navy: #0F172A;
+  --fluent-dark: #0A0F1D;
+  --fluent-warm-white: #F8FAFC;
+  --fluent-royal-blue: #2563EB;
+  --fluent-emerald: #10B981;
+  --fluent-slate: #64748B;
+  --fluent-amber: #F59E0B;
+}
+
+/* Custom smooth scrolling and scroll snap for Scroll Mode */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for a clean presentation feel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle Fluent glass acrylic effect */
+.fluent-acrylic-light {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.fluent-acrylic-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+.fluent-card-elevated {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fluent-card-elevated:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Presentation Canvas Aspect Ratio 16:9 container */
+.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
